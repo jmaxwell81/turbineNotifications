@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="record" label="Record" language="en" table="x_gege9_turbine_ev_log">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>record</element>
+            <help/>
+            <hint/>
+            <label>Record</label>
+            <language>en</language>
+            <name>x_gege9_turbine_ev_log</name>
+            <plural>Records</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>212607632</sys_created_by>
+            <sys_created_on>2019-09-16 12:37:24</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>f30d07af13ffb300179976dc5144b0ff</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Record</sys_name>
+            <sys_package display_value="Turbine Events" source="x_gege9_turbine_ev">d4bd54c8db3b4700d087d8965e961921</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Turbine Events">d4bd54c8db3b4700d087d8965e961921</sys_scope>
+            <sys_update_name>sys_documentation_x_gege9_turbine_ev_log_record_en</sys_update_name>
+            <sys_updated_by>212607632</sys_updated_by>
+            <sys_updated_on>2019-09-16 12:37:24</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

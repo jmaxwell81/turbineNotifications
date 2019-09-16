@@ -126,6 +126,34 @@
             <sys_user/>
             <type/>
         </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>record_table</element>
+            <position>9</position>
+            <sys_created_by>212607632</sys_created_by>
+            <sys_created_on>2019-09-16 12:33:53</sys_created_on>
+            <sys_id>d04c872f13ffb300179976dc5144b0e5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_gege9_turbine_ev_log" sys_domain="global" view="Default view">105826dcdb77c700d087d8965e961949</sys_ui_section>
+            <sys_updated_by>212607632</sys_updated_by>
+            <sys_updated_on>2019-09-16 12:33:53</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>record</element>
+            <position>10</position>
+            <sys_created_by>212607632</sys_created_by>
+            <sys_created_on>2019-09-16 12:37:24</sys_created_on>
+            <sys_id>230d03af13ffb300179976dc5144b0b5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_gege9_turbine_ev_log" sys_domain="global" view="Default view">105826dcdb77c700d087d8965e961949</sys_ui_section>
+            <sys_updated_by>212607632</sys_updated_by>
+            <sys_updated_on>2019-09-16 12:37:24</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
         <sys_ui_section action="INSERT_OR_UPDATE">
             <caption/>
             <header>false</header>
