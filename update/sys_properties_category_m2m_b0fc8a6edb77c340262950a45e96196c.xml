@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties_category_m2m">
+    <sys_properties_category_m2m action="INSERT_OR_UPDATE">
+        <category display_value="GE Turbine">65f8dcdedb77cf00d087d8965e961974</category>
+        <order>100</order>
+        <property display_value="x_gege9_turbine_ev.fire.events" name="x_gege9_turbine_ev.fire.events">f3bbca6adb77c340262950a45e9619a7</property>
+        <sys_class_name>sys_properties_category_m2m</sys_class_name>
+        <sys_created_by>212612053</sys_created_by>
+        <sys_created_on>2018-01-24 16:49:55</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>b0fc8a6edb77c340262950a45e96196c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_gege9_turbine_ev.fire.events.GE Turbine</sys_name>
+        <sys_package display_value="Turbine Events" source="x_gege9_turbine_ev">d4bd54c8db3b4700d087d8965e961921</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Turbine Events">d4bd54c8db3b4700d087d8965e961921</sys_scope>
+        <sys_update_name>sys_properties_category_m2m_b0fc8a6edb77c340262950a45e96196c</sys_update_name>
+        <sys_updated_by>212612053</sys_updated_by>
+        <sys_updated_on>2018-01-24 16:49:55</sys_updated_on>
+    </sys_properties_category_m2m>
+</record_update>

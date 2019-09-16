@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sysevent_script_action">
+    <sysevent_script_action action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition_script/>
+        <description/>
+        <event_name>x_gege9_turbine_ev.trigger_object</event_name>
+        <name>Check Turbine Triggers</name>
+        <order>100</order>
+        <script><![CDATA[//Used for approvals only. All others use V@
+
+checkTriggers();
+
+function checkTriggers(){
+	//gs.info('Start');
+	var converter = new global.JSON();
+	var recordObject = converter.decode(event.parm1);
+	var tableInfo = converter.decode(event.parm2);
+	var action =  tableInfo.action.toString();
+	var tableName = tableInfo.tableName.toString();
+//	gs.info('running for ' + recordObject.currentObject.number);
+	var triggerGR = new GlideRecord('x_gege9_turbine_ev_notification_trigger');
+	triggerGR.addQuery('active', true);
+	if (action == "update"){
+		triggerGR.addQuery('on_update', true);
+	}else{
+		triggerGR.addQuery('on_insert', true);
+	}
+	triggerGR.addQuery('table', tableName);
+	triggerGR.query();
+	while(triggerGR.next()){
+	//	gs.info('Checking Triggers');
+		if (checkTriggerCondition(tableName,
+			recordObject.currentObject.sys_id,
+		triggerGR.when_to_send)){
+			//gs.info('Found Trigger');
+			var evaluator = new GlideScopedEvaluator(); 
+			var turbinePayload = evaluator.evaluateScript(triggerGR, 'payload', recordObject.currentObject);
+			//gs.info('turbinePay ' + turbinePayload.toString());
+			var turbineTransaction = sendTurbineEvent(triggerGR.turbine_event_name, turbinePayload, triggerGR.endpoint.toString(), recordObject.currentObject, triggerGR.sys_id.toString());
+			logTrigger(triggerGR.sys_id, turbinePayload.sys_id, turbineTransaction, turbinePayload);
+		}
+	}
+	
+	function checkTriggerCondition(table, record, triggerCondition){
+		var gr = new GlideRecord(table);
+		gr.addEncodedQuery(triggerCondition);
+		gr.addQuery('sys_id', record);
+		gr.query();
+		if(gr.hasNext()){
+			return true;
+		}else{
+			return false;
+		}
+		
+	}
+	
+	function sendTurbineEvent(event, recordInfo, endpoint, recordObject, trigger){
+		var utils = new x_gege9_turbine_ev.GETurbineUtils();
+		var transaction = utils.sendNotification(recordInfo, endpoint, recordObject, trigger);	
+		return transaction;
+	}
+	
+	function logTrigger(trigger, record, transaction, payload){
+		var logGR = new GlideRecord('x_gege9_turbine_ev_log');
+		logGR.initialize();
+		logGR.notification_trigger = trigger;
+		logGR.task = record;
+		logGR.status = transaction.status;
+		logGR.turbine_id = transaction.id;
+		logGR.payload = JSON.stringify(payload);
+		if(transaction.errorMessage){
+			logGR.error_message = transaction.errorMessage;
+		}
+		logGR.insert();
+	}
+	
+}]]></script>
+        <synchronous>false</synchronous>
+        <sys_class_name>sysevent_script_action</sys_class_name>
+        <sys_created_by>212607632</sys_created_by>
+        <sys_created_on>2018-01-17 14:39:43</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>19cba554db73c700d087d8965e961995</sys_id>
+        <sys_mod_count>72</sys_mod_count>
+        <sys_name>Check Turbine Triggers</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Turbine Events" source="x_gege9_turbine_ev">d4bd54c8db3b4700d087d8965e961921</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Turbine Events">d4bd54c8db3b4700d087d8965e961921</sys_scope>
+        <sys_update_name>sysevent_script_action_19cba554db73c700d087d8965e961995</sys_update_name>
+        <sys_updated_by>212612053</sys_updated_by>
+        <sys_updated_on>2018-08-01 19:52:42</sys_updated_on>
+    </sysevent_script_action>
+</record_update>

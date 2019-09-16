@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sysevent_script_action">
+    <sysevent_script_action action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition_script/>
+        <description/>
+        <event_name>x_gege9_turbine_ev.trigger_object_v2</event_name>
+        <name>Check Turbine Triggers V2</name>
+        <order>100</order>
+        <script><![CDATA[var converter = new global.JSON();
+var object = converter.decode(event.parm1);
+var evaluator = new GlideScopedEvaluator();
+var triggerGR = new GlideRecord('x_gege9_turbine_ev_notification_trigger');
+triggerGR.get('sys_id', object.triggerSysId);
+var turbinePayload = evaluator.evaluateScript(triggerGR, 'payload', {
+	'sys_id' : object.currentRecordSys
+});
+var turbineTransaction = sendTurbineEvent(object.turbine_event_name, turbinePayload, object.endpoint, {'sys_id' : object.currentRecordSys}, object.triggerSysId);
+logTrigger(object.triggerSysId, turbinePayload.sys_id, turbineTransaction, turbinePayload);
+function sendTurbineEvent(event, recordInfo, endpoint, recordObject, trigger){
+	var utils = new x_gege9_turbine_ev.GETurbineUtils();
+	var transaction = utils.sendNotification(recordInfo, endpoint, recordObject, trigger);
+	return transaction;
+}
+
+function logTrigger(trigger, record, transaction, payload){
+	var logGR = new GlideRecord('x_gege9_turbine_ev_log');
+	logGR.initialize();
+	logGR.notification_trigger = trigger;
+	logGR.task = record;
+	logGR.status = transaction.status;
+	logGR.turbine_id = transaction.id;
+	logGR.payload = JSON.stringify(payload);
+	if(transaction.errorMessage){
+		logGR.error_message = transaction.errorMessage;
+	}
+	logGR.insert();
+}]]></script>
+        <synchronous>false</synchronous>
+        <sys_class_name>sysevent_script_action</sys_class_name>
+        <sys_created_by>212612053</sys_created_by>
+        <sys_created_on>2018-07-31 15:20:49</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>6d130287dba39300d087d8965e9619f7</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>Check Turbine Triggers V2</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Turbine Events" source="x_gege9_turbine_ev">d4bd54c8db3b4700d087d8965e961921</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Turbine Events">d4bd54c8db3b4700d087d8965e961921</sys_scope>
+        <sys_update_name>sysevent_script_action_6d130287dba39300d087d8965e9619f7</sys_update_name>
+        <sys_updated_by>212612053</sys_updated_by>
+        <sys_updated_on>2018-07-31 15:56:25</sys_updated_on>
+    </sysevent_script_action>
+</record_update>

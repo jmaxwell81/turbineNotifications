@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_gege9_turbine_ev.GETurbineUtils</api_name>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>GETurbineUtils</name>
+        <script><![CDATA[var GETurbineUtils = Class.create();
+GETurbineUtils.prototype = {
+	initialize: function() {
+	},
+	sendNotification : function(recordDetails, endpointSuffix, recordObject, trigger){
+		var parser = new global.JSON();
+		var endpoint;
+		var xParamKey;
+		var xParamValue;
+		var token;
+		var requestBody;
+		var responseBody;
+		var status;
+		var sm;
+		var error = '';
+		var response;
+		//var turbineId;
+		var body = JSON.stringify(recordDetails);
+		if(gs.getProperty('instance_name') == 'geit'){
+			endpoint = gs.getProperty('x_gege9_turbine_ev.turbine.computer.prod.endpoint') + endpointSuffix;
+			token = this._getToken('TurbineProd');
+			xParamKey = 'X-MT-GEIT-SNOW-PRD';
+			xParamValue = 'avM6km/erERnJwRDFooR+cY7aEI7ZmNkUcVk5/iYWhY=';
+		}else{
+			endpoint = gs.getProperty('x_gege9_turbine_ev.turbine.computer.qa.endpoint') + endpointSuffix;
+			token = this._getToken('TurbineQA');
+			xParamKey = 'X-MT-GEIT-SNOW-ST';
+			xParamValue = '6wNZkYFJxSqqcgDyl1xHafrpinvHwAUPqsNEqT0zwIo=';
+		}
+		try{
+			sm = new sn_ws.RESTMessageV2();
+			sm.setHttpMethod('POST');
+			sm.setEndpoint(endpoint);
+			sm.setRequestBody(body);
+			sm.setRequestHeader("content-type", "application/json");
+			sm.setRequestHeader("accept", "application/json");
+			//sm.setRequestHeader("Authorization", "Basic Z2VpdC0wMDE6RzMxVA==");
+			sm.setRequestHeader("Origin", "https://" + gs.getProperty('instance_name') +
+								".service-now.com");
+			sm.setRequestHeader("Authorization", "Bearer " + token);
+			sm.setRequestHeader(xParamKey,xParamValue);
+			
+			
+			response = sm.execute(); // Might throw exception if http connection timed out or some issue with sending request itself because of encryption/decryption of password.
+			
+			response.waitForResponse(60);// In seconds. Wait at most 60 seconds to get response from ECC Queue/Mid Server //Might throw exception timing out waiting for response in ECC queue.
+			
+			responseBody = response.haveError() ? response.getErrorMessage() : response.getBody();
+			status = response.getStatusCode();
+		} catch(ex) {
+			responseBody = ex.getMessage();
+			status = '500';
+		} finally {
+			requestBody = sm ? sm.getRequestBody():null;
+		}
+		
+		if(status != 200){
+			error = responseBody;
+			gs.info('Turbine API Error ' + responseBody + ' Status ' + status + ' PAYLOAD ' + body + ' RECORD OBJECT ' + JSON.stringify(recordObject) + ' TRIGGER ID ' + trigger);
+			return {
+				'status' : status.toString(),
+				'id' : responseBody.toString(),
+				'errorMessage' : response.getBody()
+			};
+		}else{
+			var turbineId = parser.decode(responseBody);
+			return {
+				'status' : status,
+				'id' : turbineId.id
+			};
+		}
+	},
+	_getToken : function(tokenName){
+		var gr = new GlideRecord('x_gege9_azure_token_registration');
+		gr.get('name', tokenName);
+		if(gr.isValidRecord()){
+			return gr.access_token.toString();
+		}else{
+			return '';
+		}
+	},
+	type: 'GETurbineUtils'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>212612053</sys_created_by>
+        <sys_created_on>2018-01-22 14:13:22</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>58535f35dbbfcf00262950a45e96193b</sys_id>
+        <sys_mod_count>51</sys_mod_count>
+        <sys_name>GETurbineUtils</sys_name>
+        <sys_package display_value="Turbine Events" source="x_gege9_turbine_ev">d4bd54c8db3b4700d087d8965e961921</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Turbine Events">d4bd54c8db3b4700d087d8965e961921</sys_scope>
+        <sys_update_name>sys_script_include_58535f35dbbfcf00262950a45e96193b</sys_update_name>
+        <sys_updated_by>212612053</sys_updated_by>
+        <sys_updated_on>2018-04-30 17:46:00</sys_updated_on>
+    </sys_script_include>
+</record_update>

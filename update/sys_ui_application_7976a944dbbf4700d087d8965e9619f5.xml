@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_application">
+    <sys_ui_application action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <hint/>
+        <name>Turbine Events</name>
+        <order/>
+        <roles>x_gege9_turbine_ev.user,web_service_admin</roles>
+        <sys_class_name>sys_ui_application</sys_class_name>
+        <sys_created_by>212607632</sys_created_by>
+        <sys_created_on>2018-01-16 19:36:59</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>7976a944dbbf4700d087d8965e9619f5</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Turbine Events</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Turbine Events" source="x_gege9_turbine_ev">d4bd54c8db3b4700d087d8965e961921</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Turbine Events">d4bd54c8db3b4700d087d8965e961921</sys_scope>
+        <sys_update_name>sys_ui_application_7976a944dbbf4700d087d8965e9619f5</sys_update_name>
+        <sys_updated_by>212612053</sys_updated_by>
+        <sys_updated_on>2018-01-24 17:12:15</sys_updated_on>
+    </sys_ui_application>
+</record_update>

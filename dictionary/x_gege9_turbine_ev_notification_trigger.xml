@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Notification Trigger" max_length="40" name="x_gege9_turbine_ev_notification_trigger" type="collection">
+        <element label="Active" max_length="40" name="active" type="boolean"/>
+        <element label="Endpoint" max_length="40" name="endpoint" type="string"/>
+        <element label="Event Send" max_length="40" name="event_send" type="boolean"/>
+        <element label="On Insert" max_length="40" name="on_insert" type="boolean"/>
+        <element label="On Update" max_length="40" name="on_update" type="boolean"/>
+        <element label="Payload" max_length="8000" name="payload" type="script"/>
+        <element label="Table" max_length="80" name="table" type="table_name"/>
+        <element display="true" label="Turbine Event Name" max_length="4000" name="turbine_event_name" type="string"/>
+        <element attributes="extended_operators=VALCHANGES;CHANGESFROM;CHANGESTO" dependent="table" dependent_on_field="table" label="When to Send" max_length="4000" name="when_to_send" type="conditions" use_dependent_field="true"/>
+    </element>
+</database>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>alm_asset</collection>
+        <condition>gs.getProperty('x_gege9_turbine_ev.fire.events') == 'true'</condition>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Turbine Trigger V2 (Asset)</name>
+        <order>600</order>
+        <priority>300</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+	var triggerGR = new GlideRecord('x_gege9_turbine_ev_notification_trigger');
+	triggerGR.addQuery('active', true);
+	if (current.operation() == "update"){
+		triggerGR.addQuery('on_update', true);
+	}else{
+		triggerGR.addQuery('on_insert', true);
+	}
+	triggerGR.addQuery('event_send', false);
+	triggerGR.addQuery('table', current.getTableName());
+	triggerGR.query();
+	while(triggerGR.next()){
+		var value = GlideFilter.checkRecord(current, triggerGR.when_to_send.toString(), {'matchAll' : true});
+		gs.info('Leslie is a shorttimer 1: ' + value);
+			if(value === true){
+				gs.info('Leslie is a shorttimer 2: ' + value);
+				gs.eventQueue("x_gege9_turbine_ev.trigger_object_v2", current, JSON.stringify({
+					'triggerSysId' : triggerGR.sys_id.toString(),
+					'turbine_event_name' : triggerGR.turbine_event_name.toString(),
+					'endpoint' : triggerGR.endpoint.toString(),
+					'currentRecordSys' : current.sys_id.toString(),
+					'currentRecordNumber' : ''
+				}));
+			}
+		}
+	})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>212607632</sys_created_by>
+        <sys_created_on>2018-11-14 18:21:39</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>0b55a8dddbf9e300d087d8965e9619c7</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>Turbine Trigger V2 (Asset)</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Turbine Events" source="x_gege9_turbine_ev">d4bd54c8db3b4700d087d8965e961921</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Turbine Events">d4bd54c8db3b4700d087d8965e961921</sys_scope>
+        <sys_update_name>sys_script_0b55a8dddbf9e300d087d8965e9619c7</sys_update_name>
+        <sys_updated_by>212607632</sys_updated_by>
+        <sys_updated_on>2018-11-14 21:13:13</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=0b55a8dddbf9e300d087d8965e9619c7"/>
+</record_update>

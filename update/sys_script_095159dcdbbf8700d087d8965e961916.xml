@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>false</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>task</collection>
+        <condition>gs.getProperty('x_gege9_turbine_ev.fire.events') == 'true'</condition>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Turbine Trigger (Task)</name>
+        <order>600</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {	
+	var recordObjects = {
+		'currentObject' : toObject(current),
+		'previousObject' : toObject(previous)
+	};
+	
+	var tableInfo = {
+		'tableName' : current.getTableName(),
+		'action' : current.operation(),
+		'url' : gs.getProperty('glide.servlet.uri') + 'nav_to.do?uri=' + current.getTableName() + '.do?sys_id=' + current.sys_id
+	};
+	gs.eventQueue("x_gege9_turbine_ev.trigger_object", current, JSON.stringify(recordObjects), JSON.stringify(tableInfo));
+	//}
+	
+	
+	function toObject(recordToPackage){
+		//https://community.servicenow.com/community/develop/blog/2015/09/24/community-code-snippets--gliderecord-to-object-array-conversion
+		//convert gliderecords to objects so they can be pushed into the array
+		var packageToSend = {};
+			
+			for (var property in recordToPackage) {
+				try {
+					if(property == 'work_notes' || property == 'comments_and_work_notes'
+						|| property == 'comments'){
+						packageToSend[property] = recordToPackage[property].getJournalEntry(1);
+					}else if(property == 'approval_set' || property == 'closed_at' ||
+					property == 'due_date' || property == 'expected_start' ||
+					property == 'follow_up' || property == 'opened_at' ||
+					property == 'sys_created_on' || property == 'sys_updated_on' ||
+					property == 'work_end' || property == 'work_start'){
+						packageToSend[property] = recordToPackage[property].toString();
+					}else{
+						packageToSend[property] = recordToPackage[property].getDisplayValue();
+					}
+				}
+				catch(err){}
+				}
+				return packageToSend;
+			}
+		})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>212607632</sys_created_by>
+        <sys_created_on>2018-01-17 12:52:36</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>095159dcdbbf8700d087d8965e961916</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>Turbine Trigger (Task)</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Turbine Events" source="x_gege9_turbine_ev">d4bd54c8db3b4700d087d8965e961921</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Turbine Events">d4bd54c8db3b4700d087d8965e961921</sys_scope>
+        <sys_update_name>sys_script_095159dcdbbf8700d087d8965e961916</sys_update_name>
+        <sys_updated_by>212612053</sys_updated_by>
+        <sys_updated_on>2018-07-31 16:04:19</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=095159dcdbbf8700d087d8965e961916"/>
+</record_update>

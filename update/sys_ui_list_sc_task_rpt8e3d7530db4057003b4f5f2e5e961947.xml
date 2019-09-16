@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_list parent="" relationship="" sys_domain="global" table="sc_task" version="2" view="RPT8e3d7530db4057003b4f5f2e5e961947">
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>number</element>
+            <list_id display_value="sc_task" element="NULL" name="sc_task" parent="NULL" relationship="NULL" sys_domain="global" view="ca3d7530db4057003b4f5f2e5e96194b">137d4899dbcff304c79cdffa5e9619c5</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>0</position>
+            <sum>false</sum>
+            <sys_created_by>212716462</sys_created_by>
+            <sys_created_on>2019-08-02 16:07:01</sys_created_on>
+            <sys_id>db7d4899dbcff304c79cdffa5e9619c5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>212716462</sys_updated_by>
+            <sys_updated_on>2019-08-02 16:07:01</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>parent.short_description</element>
+            <list_id display_value="sc_task" element="NULL" name="sc_task" parent="NULL" relationship="NULL" sys_domain="global" view="ca3d7530db4057003b4f5f2e5e96194b">137d4899dbcff304c79cdffa5e9619c5</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>1</position>
+            <sum>false</sum>
+            <sys_created_by>212716462</sys_created_by>
+            <sys_created_on>2019-08-02 16:07:01</sys_created_on>
+            <sys_id>5f7d4899dbcff304c79cdffa5e9619c5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>212716462</sys_updated_by>
+            <sys_updated_on>2019-08-02 16:07:01</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>short_description</element>
+            <list_id display_value="sc_task" element="NULL" name="sc_task" parent="NULL" relationship="NULL" sys_domain="global" view="ca3d7530db4057003b4f5f2e5e96194b">137d4899dbcff304c79cdffa5e9619c5</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>2</position>
+            <sum>false</sum>
+            <sys_created_by>212716462</sys_created_by>
+            <sys_created_on>2019-08-02 16:07:01</sys_created_on>
+            <sys_id>df7d4899dbcff304c79cdffa5e9619c5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>212716462</sys_updated_by>
+            <sys_updated_on>2019-08-02 16:07:01</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>parent.u_on_behalf_of</element>
+            <list_id display_value="sc_task" element="NULL" name="sc_task" parent="NULL" relationship="NULL" sys_domain="global" view="ca3d7530db4057003b4f5f2e5e96194b">137d4899dbcff304c79cdffa5e9619c5</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>3</position>
+            <sum>false</sum>
+            <sys_created_by>212716462</sys_created_by>
+            <sys_created_on>2019-08-02 16:07:01</sys_created_on>
+            <sys_id>537d4899dbcff304c79cdffa5e9619c6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>212716462</sys_updated_by>
+            <sys_updated_on>2019-08-02 16:07:01</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>request_item.u_on_behalf_of.vip</element>
+            <list_id display_value="sc_task" element="NULL" name="sc_task" parent="NULL" relationship="NULL" sys_domain="global" view="ca3d7530db4057003b4f5f2e5e96194b">137d4899dbcff304c79cdffa5e9619c5</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>4</position>
+            <sum>false</sum>
+            <sys_created_by>212716462</sys_created_by>
+            <sys_created_on>2019-08-02 16:07:01</sys_created_on>
+            <sys_id>d37d4899dbcff304c79cdffa5e9619c6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>212716462</sys_updated_by>
+            <sys_updated_on>2019-08-02 16:07:01</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>parent.u_on_behalf_of.u_effective_start_date</element>
+            <list_id display_value="sc_task" element="NULL" name="sc_task" parent="NULL" relationship="NULL" sys_domain="global" view="ca3d7530db4057003b4f5f2e5e96194b">137d4899dbcff304c79cdffa5e9619c5</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>5</position>
+            <sum>false</sum>
+            <sys_created_by>212716462</sys_created_by>
+            <sys_created_on>2019-08-02 16:07:01</sys_created_on>
+            <sys_id>577d4899dbcff304c79cdffa5e9619c6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>212716462</sys_updated_by>
+            <sys_updated_on>2019-08-02 16:07:01</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>state</element>
+            <list_id display_value="sc_task" element="NULL" name="sc_task" parent="NULL" relationship="NULL" sys_domain="global" view="ca3d7530db4057003b4f5f2e5e96194b">137d4899dbcff304c79cdffa5e9619c5</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>6</position>
+            <sum>false</sum>
+            <sys_created_by>212716462</sys_created_by>
+            <sys_created_on>2019-08-02 16:07:01</sys_created_on>
+            <sys_id>d77d4899dbcff304c79cdffa5e9619c6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>212716462</sys_updated_by>
+            <sys_updated_on>2019-08-02 16:07:01</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>opened_at</element>
+            <list_id display_value="sc_task" element="NULL" name="sc_task" parent="NULL" relationship="NULL" sys_domain="global" view="ca3d7530db4057003b4f5f2e5e96194b">137d4899dbcff304c79cdffa5e9619c5</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>7</position>
+            <sum>false</sum>
+            <sys_created_by>212716462</sys_created_by>
+            <sys_created_on>2019-08-02 16:07:01</sys_created_on>
+            <sys_id>5b7d4899dbcff304c79cdffa5e9619c6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>212716462</sys_updated_by>
+            <sys_updated_on>2019-08-02 16:07:01</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>assigned_to</element>
+            <list_id display_value="sc_task" element="NULL" name="sc_task" parent="NULL" relationship="NULL" sys_domain="global" view="ca3d7530db4057003b4f5f2e5e96194b">137d4899dbcff304c79cdffa5e9619c5</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>8</position>
+            <sum>false</sum>
+            <sys_created_by>212716462</sys_created_by>
+            <sys_created_on>2019-08-02 16:07:01</sys_created_on>
+            <sys_id>db7d4899dbcff304c79cdffa5e9619c6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>212716462</sys_updated_by>
+            <sys_updated_on>2019-08-02 16:07:01</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>variables.1a029687db2b8300262950a45e9619d1</element>
+            <list_id display_value="sc_task" element="NULL" name="sc_task" parent="NULL" relationship="NULL" sys_domain="global" view="ca3d7530db4057003b4f5f2e5e96194b">137d4899dbcff304c79cdffa5e9619c5</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>9</position>
+            <sum>false</sum>
+            <sys_created_by>212716462</sys_created_by>
+            <sys_created_on>2019-08-02 16:07:01</sys_created_on>
+            <sys_id>5f7d4899dbcff304c79cdffa5e9619c6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>212716462</sys_updated_by>
+            <sys_updated_on>2019-08-02 16:07:01</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element/>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <name>sc_task</name>
+            <parent/>
+            <position/>
+            <relationship/>
+            <sum>false</sum>
+            <sys_class_name>sys_ui_list</sys_class_name>
+            <sys_created_by>212716462</sys_created_by>
+            <sys_created_on>2019-08-02 16:07:01</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>137d4899dbcff304c79cdffa5e9619c5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>sc_task</sys_name>
+            <sys_package display_value="Turbine Events" source="x_gege9_turbine_ev">d4bd54c8db3b4700d087d8965e961921</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Turbine Events">d4bd54c8db3b4700d087d8965e961921</sys_scope>
+            <sys_update_name>sys_ui_list_sc_task_RPT8e3d7530db4057003b4f5f2e5e961947</sys_update_name>
+            <sys_updated_by>212716462</sys_updated_by>
+            <sys_updated_on>2019-08-02 16:07:01</sys_updated_on>
+            <sys_user/>
+            <view display_value="Rpt8e3d7530db4057003b4f5f2e5e961947" name="RPT8e3d7530db4057003b4f5f2e5e961947">ca3d7530db4057003b4f5f2e5e96194b</view>
+            <view_name/>
+        </sys_ui_list>
+    </sys_ui_list>
+</record_update>
