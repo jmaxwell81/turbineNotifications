@@ -20,8 +20,8 @@
         <default_value/>
         <defaultsort/>
         <delete_roles/>
-        <dependent/>
-        <dependent_on_field/>
+        <dependent>record_table</dependent>
+        <dependent_on_field>record_table</dependent_on_field>
         <display>false</display>
         <dynamic_creation>false</dynamic_creation>
         <dynamic_creation_script/>
@@ -55,7 +55,7 @@
         <sys_created_on>2019-09-16 12:37:24</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>9c0d0f2f13ffb300179976dc5144b0af</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name>Record</sys_name>
         <sys_package display_value="Turbine Events" source="x_gege9_turbine_ev">d4bd54c8db3b4700d087d8965e961921</sys_package>
         <sys_policy/>
@@ -63,11 +63,11 @@
         <sys_scope display_value="Turbine Events">d4bd54c8db3b4700d087d8965e961921</sys_scope>
         <sys_update_name>sys_dictionary_x_gege9_turbine_ev_log_record</sys_update_name>
         <sys_updated_by>212607632</sys_updated_by>
-        <sys_updated_on>2019-09-16 12:37:24</sys_updated_on>
+        <sys_updated_on>2019-09-23 13:35:09</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
-        <use_dependent_field>false</use_dependent_field>
+        <use_dependent_field>true</use_dependent_field>
         <use_dynamic_default>false</use_dynamic_default>
         <use_reference_qualifier>simple</use_reference_qualifier>
         <virtual>false</virtual>
